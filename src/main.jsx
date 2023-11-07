@@ -19,35 +19,8 @@ import './index.css'
 
 // import './08-useReducer/intro-reducer';
 // import { TodoApp } from './08-useReducer/TodoApp';
-import { MainApp } from './09-useContext/MainApp';
-import { AboutPage } from './09-useContext/AboutPage';
-import { LoginPage } from './09-useContext/LoginPage';
-import { HomePage } from './09-useContext/HomePage';
-
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <MainApp />,
-    children: [
-      {
-        path: "about",
-        element: <AboutPage/>
-      },
-      {
-        path: "login",
-        element: <LoginPage/>
-      },
-      {
-        path: "home",
-        element: <HomePage/>
-      },
-      {
-        path: "*",
-        element: <Navigate to="/" replace/>
-      }
-    ]
-  },
-]);
+import { routesConfig } from './09-useContext/routesConfig';
+const router = createBrowserRouter(routesConfig);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
